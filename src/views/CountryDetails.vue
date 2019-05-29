@@ -75,6 +75,7 @@
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center"
 						    v-for="(value, key) in country.languages[0]"
+						    :key="key"
 						>
 							<span class="badge badge-success">{{key.charAt(0).toUpperCase() + key.slice(1)}}</span>
 							<span class="font-weight-bold">{{value === '' || value === null ? '-': value}}</span>
@@ -86,6 +87,7 @@
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center"
 						    v-for="(value, key) in country.regionalBlocs[0]"
+						    :key="key"
 						>
 							<span class="badge badge-success">{{key.charAt(0).toUpperCase() + key.slice(1)}}</span>
 							<span class="font-weight-bold">{{value === '' || value === null || value === [] ? '-': value}}</span>
@@ -96,13 +98,13 @@
 							<span class="font-weight-bold">Alt spellings</span>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center"
-						    v-for="(value, key) in country.altSpellings"
+						    v-for="value in country.altSpellings"
 						>
 							<span class="badge badge-success">Alt spellings</span>
 							<span class="font-weight-bold">{{value === '' || value === null ? '-': value}}</span>
 						</li>
 						<li class="list-group-item d-flex justify-content-between align-items-center"
-						    v-for="(value, key) in country.topLevelDomain"
+						    v-for="value in country.topLevelDomain"
 						>
 							<span class="badge badge-success">Top level domain:</span>
 							<span class="font-weight-bold">{{value === '' || value === null ? '-': value}}</span>
